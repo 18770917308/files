@@ -306,8 +306,11 @@ a{
 .advan-items li{
 	font-size: 16px;
 	color: #1c2424;
-	padding: 10px 0;
-	width: 220px;
+	padding: 5px 0;
+	width: 480px;
+	text-indent: -12px;
+	margin-left: 12px;
+	line-height: 26px;
 }
 .factory-video{
 	width: 600px;
@@ -503,12 +506,17 @@ a{
 .product{
 	width: 1200px;
 	margin: 90px auto 0;
+	position: relative;
 }
 .product-center{
 	width: 280px;
-	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
+	background: #fff;
+	z-index: 5;
 }
 .product-title{
 	height: 60px;
@@ -528,11 +536,26 @@ a{
 	border-bottom: 1px solid #eee;
 	border-right: 1px solid #eee;
 }
+.sh-more{
+	text-align: center;
+	color: #36639f;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+.sh-more:hover{cursor: pointer;}
+.sh-more span{
+	padding: 16px 0;
+}
+.active.sh-more .h-more{display: block!important;}
+.active.sh-more .s-more{display: none!important;;}
+.s-more{display: block;}
+.h-more{display: none;}
 .product-kind-list:hover span,.product-list li:hover{
 	cursor: pointer;
-	color: #2e8be1
+	color: #2e8be1;
 }
 .product-kind-list:hover{background: #eee;border-right: 0;}
+.active.product-kind-list{display: none;}
 .product-list{display: none;}
 .active.product-list{
 	display: block;
@@ -545,6 +568,7 @@ a{
 	border-top: 1px solid #eee;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f5f5f5,endColorstr=#f5f5f5)
 }
 .product-list li{
 	float: left;
@@ -554,8 +578,7 @@ a{
 .product-list li a{color: #888;font-size: 14px;}
 .product-list li a:hover{color: #2e8be1}
 .product-img-show{
-	float: left;
-	padding-left: 38px;
+	padding-left: 318px;
 	width: 880px;
 }
 .product-img-big{
@@ -659,6 +682,7 @@ a{
 	font-size: 14px;
 	color: #686868;
 	line-height: 28px;
+	text-indent: 2em;
 }
 /*新闻动态*/
 .news-modules{

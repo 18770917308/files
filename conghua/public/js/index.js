@@ -3,26 +3,42 @@
 	function main(){
 		var index1=index2=1;//index1：轮播index index2：产品图
 		$(".banner-img").eq(0).css("display","block");
-		//导航悬浮位置
-		if (window.attachEvent) { //ie8下兼容写法 注意onscroll 而不是scroll
-	                window.attachEvent('onscroll',function(){
-					var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+		//nav定位
+		function topFix(){
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 					if(scrollTop>38){
 						$(".top-nav").css("top","0");
 					}else{
 						$(".top-nav").css("top","38px");
 					}
-				})
+		}
+		//ie8下兼容写法 注意onscroll 而不是scroll
+		if (window.attachEvent) { 
+	                window.attachEvent('onscroll',topFix);
             } else if (window.addEventListener) { 
-	                window.addEventListener('scroll',function(){
-					var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-					if(scrollTop>38){
-						$(".top-nav").css("top","0");
-					}else{
-						$(".top-nav").css("top","38px");
-					}
-				});  
+	                window.addEventListener('scroll',topFix);  
             }
+        //产品分类项过多时隐藏
+        if($(".product-kind-list").length>10){//产品系列多余8个时，隐藏多余
+        	console.log($(".product-kind-list").length);
+        	for(var i = 10;i<$(".product-kind-list").length;i++){
+        		$(".product-kind-list").eq(i).addClass("active");
+        	}
+        };
+        //点击 查看更多
+        $(".s-more").click(function(){
+        	$(".sh-more").addClass("active");
+        	for(var i = 10;i<$(".product-kind-list").length;i++){
+        		$(".product-kind-list").eq(i).removeClass("active");
+        	}
+        });
+        //点击 隐藏更多
+        $(".h-more").click(function(){
+        	$(".sh-more").removeClass("active");
+        	for(var i = 10;i<$(".product-kind-list").length;i++){
+        		$(".product-kind-list").eq(i).addClass("active");
+        	}
+        })
 		//导航项悬浮显示二级菜单
 		$(".nav-item").hover(function(){
 			$(this).children(".child-item").addClass("active");
@@ -50,9 +66,9 @@
 				index1++;
 			}
 			clearInterval(timer1);
-			$(".banner-img").eq(pIndex1).css("display","block").siblings().css("display","none");
+			$(".banner-img").eq(pIndex1).css("display","block").siblings("li").css("display","none");
 			timer1 = setInterval(bannerSlide,2000);
-			$(this).addClass("active").siblings().removeClass("active");
+			$(this).addClass("active").siblings("li").removeClass("active");
 		});
 		//video播放控制
 		 var $myVideo = $("#video").get(0);
@@ -129,10 +145,10 @@
 		//产品中心二级菜单
 		$(".product-kind-list").hover(function(e){
 			e.stopPropagation();
-			$(this).children(".product-list").addClass("active")
+			$(this).children(".product-list").addClass("active");
 		},function(e){
 			e.stopPropagation();
-			$(this).children(".product-list").removeClass("active")
+			$(this).children(".product-list").removeClass("active");
 		});
 		//产品图轮播
 		function pSlide(){
