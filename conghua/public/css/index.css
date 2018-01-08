@@ -16,7 +16,7 @@ a{
 	text-decoration: none;
 	color: #666;
 }
-.clearfixd::after{
+.clearfixd:after{
 	display: block;
 	content: '.';
 	height: 0;
@@ -59,7 +59,7 @@ a{
 .header-links li a:hover{
 	color: #2e8be1;
 }
-.supply-sample a::before{
+.supply-sample a:before{
 	content: '';
 	display: block;
 	width: 14px;
@@ -70,7 +70,7 @@ a{
 	left: 0;
 	margin: -8px 0;
 }
-.contact-online a::before{
+.contact-online a:before{
 	content: '';
 	display: block;
 	width: 17px;
@@ -81,7 +81,7 @@ a{
 	left: 0;
 	margin: -8px 0;
 }
-.msg-online a::before{
+.msg-online a:before{
 	content: '';
 	display: block;
 	width: 16px;
@@ -164,7 +164,7 @@ a{
 	box-sizing: border-box;
 	position: relative;
 }
-.contact-us a::before{
+.contact-us a:before{
 	content: '';
 	width: 26px;
 	height: 20px;
@@ -384,7 +384,7 @@ a{
 	line-height: 50px;
 	margin: 0;
 }
-.factory-name::before{
+.factory-name:before{
 	content: '';
 	width: 20px;
 	height: 20px;
@@ -509,7 +509,6 @@ a{
 	float: left;
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
 }
 .product-title{
 	height: 60px;
@@ -527,27 +526,30 @@ a{
 	line-height: 50px;
 	text-align: center;
 	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
 }
 .product-kind-list:hover span,.product-list li:hover{
 	cursor: pointer;
 	color: #2e8be1
 }
+.product-kind-list:hover{background: #eee;border-right: 0;}
 .product-list{display: none;}
 .active.product-list{
 	display: block;
 	position: absolute;
-	width: 780px;
+	width: 600px;
 	top: 0;
 	left: 280px;
 	z-index: 33;
+	background: rgba(245,245,245,.8);
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 .product-list li{
 	float: left;
-	padding: 0 10px;
+	padding: 0 5px;
 	height: 49px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-	background: rgba(255,255,255,.5);
 }
 .product-list li a{color: #888;font-size: 14px;}
 .product-list li a:hover{color: #2e8be1}
@@ -695,7 +697,7 @@ a{
 	font-size: 14px;
 	color:#606060;
 }
-.to-more::after{
+.to-more:after{
 	content: '';
 	width: 12px;
 	height: 12px;
@@ -753,7 +755,7 @@ a{
 	overflow: hidden;
 	position: relative;
 }
-.news-content::after{
+.news-content:after{
 	  content: "";
       text-align: right;
       position: absolute;

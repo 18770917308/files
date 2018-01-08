@@ -4,14 +4,25 @@
 		var index1=index2=1;//index1：轮播index index2：产品图
 		$(".banner-img").eq(0).css("display","block");
 		//导航悬浮位置
-		window.addEventListener('scroll',function(){
-			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-			if(scrollTop>38){
-				$(".top-nav").css("top","0");
-			}else{
-				$(".top-nav").css("top","38px");
-			}
-		});
+		if (window.attachEvent) { //ie8下兼容写法 注意onscroll 而不是scroll
+	                window.attachEvent('onscroll',function(){
+					var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+					if(scrollTop>38){
+						$(".top-nav").css("top","0");
+					}else{
+						$(".top-nav").css("top","38px");
+					}
+				})
+            } else if (window.addEventListener) { 
+	                window.addEventListener('scroll',function(){
+					var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+					if(scrollTop>38){
+						$(".top-nav").css("top","0");
+					}else{
+						$(".top-nav").css("top","38px");
+					}
+				});  
+            }
 		//导航项悬浮显示二级菜单
 		$(".nav-item").hover(function(){
 			$(this).children(".child-item").addClass("active");
