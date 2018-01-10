@@ -75,13 +75,13 @@
 		<div class="banner-wrap">
 			<ol class="banner">
 				<li class="banner-img">
-					<img src="public/images/banner.jpg" alt="banner">
+					<img src="public/images/pro-3.jpg" alt="banner">
 				</li>
 				<li class="banner-img">
-					<img src="public/images/banner.jpg" alt="banner">
+					<img src="public/images/pro-1.jpg" alt="banner">
 				</li>
 				<li class="banner-img">
-					<img src="public/images/banner.jpg" alt="banner">
+					<img src="public/images/pro-2.jpg" alt="banner">
 				</li>
 			</ol>
 			<ul class="pagination-ul clearfixd">
@@ -159,35 +159,35 @@
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory1.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-1.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory1.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-2.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory2.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-3.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory3.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-4.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory1.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-5.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory2.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-6.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory3.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-7.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 							<li class="slide-item">
-								<i class="factory-img"><img src="public/images/factory1.png" alt="工厂"></i>
+								<i class="factory-img"><img src="public/images/pro-1.jpg" alt="工厂"></i>
 								<p class="factory-name">XXX车间</p>
 							</li>
 						</ul>
@@ -622,31 +622,74 @@
 					<span class="h-more">隐藏更多</span>
 				</li>
 			</ul>
+			<script type="text/javascript">
+				function imgAuto(maxWidth,maxHeight,objImg){
+					var img = new Image();
+							
+						img.src = objImg.src;
+						var hRatio;
+						var wRatio;
+						var Ratio = 1;
+						var w = img.width;
+						var h = img.height;
+						wRatio = maxWidth / w;
+						hRatio = maxHeight / h;
+						if (maxWidth ==0 && maxHeight==0){
+							Ratio = 1;
+						}else if (maxWidth==0){//
+							if (hRatio<1) Ratio = hRatio;
+						}else if (maxHeight==0){
+							if (wRatio<1) Ratio = wRatio;
+						}else if (wRatio<1 || hRatio<1){
+							Ratio = (wRatio<=hRatio?wRatio:hRatio);
+						}
+						if (Ratio<1){
+							w = w * Ratio;
+							h = h * Ratio;
+						}
+						objImg.height = h;
+						objImg.width = w;
+				}
+			</script>
 			<div class="product-img-show">
-				<i class="active product-img-big"><img src="" alt="产品大图1"></i>
-				<i class="product-img-big"><img src="public/images/factory3.png" alt="产品大图2"></i>
-				<i class="product-img-big"><img src="public/images/factory2.png" alt="产品大图3"></i>
-				<i class="product-img-big"><img src="public/images/factory1.png" alt="产品大图4"></i>
+				<i class="active product-img-big"><img src="public/images/pro-1.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-2.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-3.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-4.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-5.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-6.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
+				<i class="product-img-big"><img src="public/images/pro-7.jpg" width="0" height="0" onload="imgAuto(880,380,this)"></i>
 				<div class="product-img-wrap1">
 					<div class="product-img-wrap2">
 						<ul class="product-img-slide clearfixd">
 							<li class="product-slide-item">
-								<img src="" alt="产品小图1">
+								<img src="public/images/pro-1.jpg" alt="产品小图1">
 								<div class="product-name">案例展示1</div>
 							</li>
 							<li class="product-slide-item">
-								<img src="public/images/factory3.png" alt="产品小图2">
+								<img src="public/images/pro-2.jpg" alt="产品小图2">
 								<div class="product-name">案例展示2</div>
 							</li>
 							<li class="product-slide-item">
-								<img src="public/images/factory2.png" alt="产品小图3">
+								<img src="public/images/pro-3.jpg" alt="产品小图3">
 								<div class="product-name">案例展示3</div>
 							</li>
 							<li class="product-slide-item">
-								<img src="public/images/factory1.png" alt="产品小图4">
+								<img src="public/images/pro-4.jpg" alt="产品小图4">
 								<div class="product-name">案例展示4</div>
 							</li>
-							
+							<li class="product-slide-item">
+								<img src="public/images/pro-5.jpg" alt="产品小图1">
+								<div class="product-name">案例展示5</div>
+							</li>
+							<li class="product-slide-item">
+								<img src="public/images/pro-6.jpg" alt="产品小图2">
+								<div class="product-name">案例展示6</div>
+							</li>
+							<li class="product-slide-item">
+								<img src="public/images/pro-7.jpg" alt="产品小图3">
+								<div class="product-name">案例展示7</div>
+							</li>
 						</ul>
 					</div>
 					<i class="product-prev"></i>

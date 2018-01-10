@@ -175,7 +175,7 @@ a{
 	background: url('../images/icon-email.png') no-repeat;
 }
 /*banner*/
-.banner-img{display: none}
+.banner-img{display: none;max-height: 450px;overflow: hidden;}
 .banner-img img{
 	width: 100%;
 }
@@ -585,12 +585,14 @@ a{
 	display: none;
 	width: 880px;
 	height: 380px;
-	background: #aaa;
+	background: #1a519e;
+	text-align: center;
+	line-height: 380px;
+	overflow: hidden;
 }
 .product-img-big img{
-	width: 100%;
-	height:100%;
-}
+	display: inline-block;
+} 
 .active.product-img-big{display: block;}
 .product-img-wrap1{position: relative;}
 .product-img-wrap2{
@@ -616,7 +618,7 @@ a{
 .product-slide-item{
 	width: 198px;
 	height: 160px;
-	background: #aaa;
+	background: #eee;
 	position: relative;
 }
 .product-slide-item img{

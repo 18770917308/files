@@ -50,7 +50,7 @@
 			var imgs = $(".banner-img"),
 				imgLen = imgs.length;
 				imgs.eq(index1).css("display","block").siblings("li").css("display","none");
-				$(".pagination-item").eq(index1).addClass("active").siblings().removeClass("active");
+				$(".pagination-item").eq(index1).addClass("active").siblings("li").removeClass("active");
 				index1++;
 				if(index1==imgLen){
 					index1=0;
@@ -160,7 +160,7 @@
 					index2=0;
 			}
 		};
-		var timer2 = setInterval(pSlide,1500);
+		var timer2 = setInterval(pSlide,2500);
 		$(".product-prev").click(function(){
 			slides(4,$(".product-img-slide"),$(".product-slide-item"),12,860);
 		});
@@ -191,10 +191,37 @@
 				$(".reservation-form").submit();
 			}
 			
-		})
-		
-	} 
+		});
+		/*$(".product-img-big img").load(function(){
+			var img = new Image(),
+				maxWidth = 880,
+				maxHeight = 380,
+				objImg = this;
+			img.src = objImg.src;
+			var hRatio;
+			var wRatio;
+			var Ratio = 1;
+			var w = img.width;
+			var h = img.height;
+			wRatio = maxWidth / w;
+			hRatio = maxHeight / h;
+			if (maxWidth ==0 && maxHeight==0){
+				Ratio = 1;
+			}else if (maxWidth==0){//
+				if (hRatio<1) Ratio = hRatio;
+			}else if (maxHeight==0){
+				if (wRatio<1) Ratio = wRatio;
+			}else if (wRatio<1 || hRatio<1){
+				Ratio = (wRatio<=hRatio?wRatio:hRatio);
+			}
+			if (Ratio<1){
+				w = w * Ratio;
+				h = h * Ratio;
+			}
+			objImg.height = h;
+			objImg.width = w;
+		})*/
+	}
 	main();
-	
 
 })
